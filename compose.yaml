@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    ports:
+      - 3000:3000
+    develop: 
+      watch:
+        - path: ./
+          action: sync
+          target: /usr/local/app
+          ignore:
+            - node_modules
+        - path: ./yarn.lock
+          action: rebuild
