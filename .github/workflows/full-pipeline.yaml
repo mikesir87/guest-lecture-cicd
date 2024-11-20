@@ -49,4 +49,4 @@ jobs:
         with:
           base64-kube-config: ${{ secrets.KUBECONFIG }}
 
-      - run: kubectl set image deployment/website website=${{ secrets.DOCKERHUB_USERNAME}}/demo-app:${{ github.sha }}
+      - run: kubectl set image deployment/demo demo-app=${{ secrets.DOCKERHUB_USERNAME}}/demo-app:${{ github.sha }}
