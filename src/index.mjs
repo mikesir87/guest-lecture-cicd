@@ -1,5 +1,6 @@
 import express from "express";
 import { indexRoute } from "./routes/indexRoute.mjs";
+import { messageRoute } from "./routes/messageRoute.mjs";
 
 const app = express();
 
