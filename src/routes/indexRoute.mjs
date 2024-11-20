@@ -1,3 +1,3 @@
 export function indexRoute(req, res) {
-  res.send("Hello, world!!!");
+  res.send("Hello, class!");
 }
