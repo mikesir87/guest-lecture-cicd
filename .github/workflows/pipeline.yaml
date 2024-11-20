@@ -40,3 +40,14 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/demo-app:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/demo-app:${{ github.sha }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Kubernetes
+    needs: docker
+    steps:
+      - uses: tale/kubectl-action@v1
+        with:
+          base64-kube-config: ${{ secrets.KUBECONFIG }}
+
+      - run: kubectl set image deployment/demo demo-app=${{ secrets.DOCKERHUB_USERNAME}}/demo-app:${{ github.sha }}
