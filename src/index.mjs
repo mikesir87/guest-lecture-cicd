@@ -4,7 +4,7 @@ import { messageRoute } from "./routes/messageRoute.mjs";
 
 const app = express();
 
-app.get("/", indexRoute);
+app.get("/somewhere-else", indexRoute);
 app.get("/message", messageRoute);
 
 const server = app.listen(3000, () => {
