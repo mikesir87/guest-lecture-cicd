@@ -9,7 +9,7 @@ describe("index route", () => {
 
     indexRoute({}, res);
 
-    expect(res.send).toHaveBeenCalledWith("Hello, world!");
+    expect(res.send).toHaveBeenCalledWith("Hello, world!!!");
   });
   
 });
